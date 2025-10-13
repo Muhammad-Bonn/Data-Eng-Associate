@@ -29,7 +29,7 @@ It collects data from multiple YouTube playlists, enriches it with metadata (vie
 You can get one via https://console.cloud.google.com/apis/credentials
 
 ### 3. Build and start the container
-`docker-compose up --build`
+`docker-compose up --build -d`
 
 ### 4. Access Airflow UI
 Use the default credentials if not set otherwise:
@@ -59,7 +59,4 @@ sqlite3 data/youtube_database.db
 Add data cleaning and transformation tasks.
 Upload data to a remote database (PostgreSQL / BigQuery).
 Build visual dashboards (e.g., using Streamlit or Metabase).
-Add Airflow sensors to monitor API quota usage
-BigQuery).
-Build visual dashboards (e.g., using Streamlit or Metabase).
-Add Airflow sensors to monitor API quota usage
+Add Airflow sensors to monitor API quota usage.
