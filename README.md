@@ -25,7 +25,7 @@ It collects data from multiple YouTube playlists, enriches it with metadata (vie
 `cd ~/doc-data-airflow/daheeh`
 
 ### 2. Enter your YouTube API key
-`export YOUTUBE_API_KEY="YOUR_API_KEY_HERE"`
+`export YOUTUBE_API_KEY="**************"`
 You can get one via https://console.cloud.google.com/apis/credentials
 
 ### 3. Build and start the container
@@ -35,7 +35,7 @@ You can get one via https://console.cloud.google.com/apis/credentials
 Use the default credentials if not set otherwise:
 `Username: admin`
 `Password: 1234`
-You’ll see the DAG daheeh_youtube_pipeline — it will trigger automatically.
+You’ll see the DAG daheeh_youtube_pipeline — Trigger it.
 
 ### 5. Check the results
 sqlite3 data/youtube_database.db
