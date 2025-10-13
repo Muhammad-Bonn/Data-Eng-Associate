@@ -9,11 +9,11 @@ services:
       - "8080:8080"
     environment:
       - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
-      - AIRFLOW__CORE__DAGS_FOLDER=/app/dags
+      - AIRFLOW__CORE__DAGS_FOLDER=/opt/airflow/dags
       - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - YOUTUBE_API_KEY=${YOUTUBE_API_KEY}  # Pass API key to container
     volumes:
       - ./dags:/opt/airflow/dags
       - ./scripts:/opt/airflow/dags/scripts
       - ./data:/opt/airflow/dags/data
-
     command: bash /app/entrypoint.sh
