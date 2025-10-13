@@ -26,7 +26,7 @@ It collects data from multiple YouTube playlists, enriches it with metadata (vie
 
 ### 2. Enter your YouTube API key
 `export YOUTUBE_API_KEY="**************"`
-You can get one via https://console.cloud.google.com/apis/credentials
+You can get one and enable it via https://console.cloud.google.com/apis/credentials
 
 ### 3. Build and start the container
 `docker-compose up --build -d`
