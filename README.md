@@ -4,28 +4,6 @@ This project automates the **YouTube data extraction pipeline** for the Arabic e
 It collects data from multiple YouTube playlists, enriches it with metadata (views, likes, duration, comments), and stores it automatically in a **SQLite database** — all inside a single Docker container.
 
 ---
-
-## Project Structure
-
-daheeh/
-│
-├── dags/
-│ └── daheeh_pipeline.py # Airflow DAG to orchestrate the ETL pipeline
-│
-├── scripts/
-│ ├── extract_id.py # Fetches all YouTube video IDs from playlists
-│ ├── extract_metadata.py # Fetches metadata (views, likes, duration, etc.)
-│ └── main.py # Runs full pipeline and stores data in SQLite
-│
-├── data/ # Output folder (created automatically)
-│ └── youtube_database.db # SQLite database file (generated after run)
-│
-├── requirements.txt # All Python dependencies
-├── Dockerfile # Container setup file
-├── docker-compose.yml # Defines the Airflow service and volumes
-└── entrypoint.sh # Script executed when container starts
-
-
 ---
 
 ## How It Works
