@@ -22,7 +22,7 @@ It collects data from multiple YouTube playlists, enriches it with metadata (vie
 
 ### 1. Clone this repository
 `git clone https://github.com/Muhammad-Bonn/doc-data-airflow.git`
-`cd doc-data-airflow/daheeh`
+`cd ~/doc-data-airflow/daheeh`
 
 ### 2. Build and start the container
 `docker-compose up --build`
