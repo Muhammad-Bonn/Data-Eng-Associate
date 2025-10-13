@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  airflow:
+    build: .
+    container_name: daheeh_airflow
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
+      - AIRFLOW__CORE__DAGS_FOLDER=/app/dags
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+    volumes:
+      - ./dags:/app/dags
+      - ./scripts:/app/scripts
+      - ./data:/app/data
+    command: bash /app/entrypoint.sh
+
