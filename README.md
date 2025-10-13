@@ -13,7 +13,7 @@ It collects data from multiple YouTube playlists, enriches it with metadata (vie
   - Google YouTube Data API v3  
   - Apache Airflow (2.9.0) for scheduling  
   - Docker + Docker Compose  
-  - 🗃SQLite for lightweight local storage
+  - SQLite for lightweight local storage
 
 The DAG runs automatically every **Tuesday and Saturday at 9:30 PM**, and once immediately after the container starts.
 
