@@ -8,12 +8,16 @@ import sqlite3  # for database operations
 from extract_id import extract_all_playlists
 from extract_metadata import extract_metadata
 import os
+import sys
 
 if __name__ == "__main__":
-    # Your YouTube API key -- export YOUTUBE_API_KEY="*****"
+    # Try to read the YouTube API key from an environment variable
     api_key = os.getenv("YOUTUBE_API_KEY")
+
+    # If the key is missing, stop the script (Airflow can't handle input())
     if not api_key:
-        api_key = input("Enter your YouTube API key: ").strip()    
+        print("ERROR: Missing YouTube API key. Please set the environment variable 'YOUTUBE_API_KEY'.")
+        sys.exit(1)
     
     # Playlists to scrape
     playlist_ids = [
@@ -42,18 +46,18 @@ if __name__ == "__main__":
 
     print("\nStep 3: Saving data to SQLite database ...")
 
-    # Connect to the SQLite database
+    # Ensure the 'data' directory exists
     os.makedirs("data", exist_ok=True)
-    conn = sqlite3.connect("data/youtube_database.db")
+    db_path = os.path.join("data", "youtube_database.db")
 
-    # Store raw video IDs in a table
+    # Connect to SQLite
+    conn = sqlite3.connect(db_path)
+
+    # Save the raw and enriched data
     raw_data.to_sql("raw_video_ids", conn, if_exists="replace", index=False)
-
-    # Store enriched metadata in another table
     enriched_data.to_sql("video_metadata", conn, if_exists="replace", index=False)
 
-    # Commit changes and close connection
     conn.commit()
     conn.close()
 
-    print("All data saved successfully in data/youtube_database.db!")
+    print(f"All data saved successfully in {db_path}!")
