@@ -8,7 +8,6 @@ Runs immediately once when triggered for the first time.
 from airflow import DAG
 from airflow.operators.bash import BashOperator
 from datetime import datetime, timedelta
-import os
 
 # ----------------------------------------------------
 # Default arguments for all tasks
@@ -35,9 +34,8 @@ with DAG(
     tags=['daheeh', 'youtube', 'etl']
 ) as dag:
 
-    # Base path to project root (assuming dags/ and scripts/ are siblings)
-    project_root = os.path.dirname(os.path.dirname(__file__))  # one level up from dags/
-    scripts_path = os.path.join(project_root, 'scripts')
+    # Path to scripts inside the Docker container
+    scripts_path = '/opt/airflow/dags/scripts'
 
     # ----------------------------------------------------
     # Task 1: Extract video IDs from playlists
