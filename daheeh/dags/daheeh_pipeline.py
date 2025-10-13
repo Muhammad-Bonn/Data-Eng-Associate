@@ -44,7 +44,7 @@ with DAG(
     # ----------------------------------------------------
     extract_ids = BashOperator(
         task_id='extract_video_ids',
-        bash_command=f'cd {scripts_path} && source ../venv/bin/activate && python extract_id.py',
+        bash_command=f'cd {scripts_path} && python extract_id.py',
     )
 
     # ----------------------------------------------------
@@ -52,7 +52,7 @@ with DAG(
     # ----------------------------------------------------
     extract_metadata = BashOperator(
         task_id='extract_video_metadata',
-        bash_command=f'cd {scripts_path} && source ../venv/bin/activate && python extract_metadata.py',
+        bash_command=f'cd {scripts_path} && python extract_metadata.py',
     )
 
     # ----------------------------------------------------
@@ -60,7 +60,7 @@ with DAG(
     # ----------------------------------------------------
     save_to_db = BashOperator(
         task_id='save_data_to_sqlite',
-        bash_command=f'cd {scripts_path} && source ../venv/bin/activate && python main.py',
+        bash_command=f'cd {scripts_path} && python main.py',
     )
 
     # ----------------------------------------------------
