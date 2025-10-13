@@ -25,16 +25,16 @@ It collects data from multiple YouTube playlists, enriches it with metadata (vie
 `cd ~/doc-data-airflow/daheeh`
 
 ### 2. Enter your YouTube API key
-You can get one via https://console.cloud.google.com/apis/credentials
 `export YOUTUBE_API_KEY="YOUR_API_KEY_HERE"`
+You can get one via https://console.cloud.google.com/apis/credentials
 
 ### 3. Build and start the container
 `docker-compose up --build`
 
 ### 4. Access Airflow UI
 Use the default credentials if not set otherwise:
-Username: admin
-Password: 1234
+**Username:** admin
+**Password:** 1234
 You’ll see the DAG daheeh_youtube_pipeline — it will trigger automatically.
 
 ### 5. Check the results
@@ -48,9 +48,9 @@ sqlite3 data/youtube_database.db
 2. Go to:  
    **Admin → Variables → + Add a new record**
 3. Add:
-Key: YOUTUBE_API_KEY
-Value: your_api_key
-4. Save, and Airflow will automatically make it available to all scripts.
+   **Key:** YOUTUBE_API_KEY
+   **Value:** your_api_key
+5. Save, and Airflow will automatically make it available to all scripts.
 
 
 ---
