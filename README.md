@@ -65,7 +65,7 @@ daheeh/
 
 ### 3. Enter your YouTube API key
 Enter your YouTube API key: **** 
-`You can get one from the Google Cloud Console`
+`You can get one via https://console.cloud.google.com/apis/credentials`
 
 ### 4. Access Airflow UI (optional)
 Use the default credentials if not set otherwise:
