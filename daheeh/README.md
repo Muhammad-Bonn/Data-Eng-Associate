@@ -54,9 +54,9 @@ You’ll see the DAG daheeh_youtube_pipeline — Trigger it.
 
 ### 5. Check the results
 
-sqlite3 data/youtube_database.db
+```sqlite3 data/youtube_database.db```
 
-`The SQLite file will be saved in your local folder (default path: ./data/youtube_database.db).`
+The SQLite file will be saved in your local folder (default path: ./data/youtube_database.db).
 
 #### Note about adding YouTube API key through Airflow
 1. Open Airflow UI → [http://localhost:8080](http://localhost:8080)
