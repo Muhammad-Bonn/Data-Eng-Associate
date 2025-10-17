@@ -20,9 +20,12 @@ It collects data from multiple YouTube playlists, enriches it with metadata (vie
 
 ## How to Run
 
-### 1. Clone this repository
-`git clone https://github.com/Muhammad-Bonn/doc-data-airflow.git`
-`cd ~/doc-data-airflow/daheeh`
+### 1. Clone only this directory
+```git clone --no-checkout https://github.com/Muhammad-Bonn/Data-Eng-Asscoiate.git```
+```cd Data-Eng-Asscoiate```
+```git sparse-checkout init --cone```
+```git sparse-checkout set daheeh```
+```git checkout main```
 
 ### 2. Enter your YouTube API key
 `export YOUTUBE_API_KEY="**************"`
