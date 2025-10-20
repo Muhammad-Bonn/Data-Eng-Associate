@@ -22,6 +22,7 @@ The goal is to design a clean and well-structured **data modeling and transforma
 | **3** | `3. Staging ERD.sql` | Visual representation (ERD) of the staging schema showing relationships between core entities. |
 | **4** | `4. Fact and Dim Tables.sql` | Builds the `prefact` and `dwh` layers — aggregates payments, merges product categories, and creates the main fact and dimension tables. |
 | **5** | `5. Fact and Dimensions ERD.sql` | Entity Relationship Diagram for the final Data Warehouse layer, illustrating the **star schema** between fact and dimension tables. |
+| **6** | `6. Sales and Reviews Analysis` | Exploratory Data Analysis for Sales and Reviews. |
 
 ---
 
