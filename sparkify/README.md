@@ -27,7 +27,9 @@ sparkify/
 ├── 1. create_tables.py  # Script to create/drop database tables
 ├── 2. etl.py            # ETL script to process song/log files
 ├── Result CSVs/      # Folder for final output CSVs
+├── 3. ERD           # Entity-Relationship Diagram
 └── README.md         # Project documentation
+```
 
 
 ### Files Explanation
