@@ -4,28 +4,18 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-12+-blue.svg)](https://www.postgresql.org/)
 
 ## Overview
-This project implements an **ETL pipeline** to process song and log data JSON files and store them into a PostgreSQL database (`sparkifydb`).  
-It consists of scripts to **create the database**, **create tables**, **load data**, and **run ETL processing**.  
+This project implements an **ETL (Extract, Transform, Load) pipeline** for a music streaming service called Sparkify.  
+It processes raw JSON data files containing **song information** and **user activity logs** and stores them in a structured PostgreSQL database (`sparkifydb`).  
+
+The project demonstrates:
+- Handling JSON files in Python using `pandas`.
+- Populating relational database tables with foreign key relationships.
+- Processing large datasets efficiently.
+- Maintaining data integrity while handling missing or invalid values.
 
 ---
 
-## Table of Contents
-1. [Prerequisites](#prerequisites)  
-2. [Project Structure](#project-structure)  
-3. [Database Setup](#database-setup)  
-4. [ETL Pipeline](#etl-pipeline)  
-5. [Viewing Data](#viewing-data)  
-6. [Export Database](#export-database)  
-7. [Notes](#notes)  
-
----
-
-## Prerequisites
-- Python 3.9+  
-- PostgreSQL 12+ installed  
-- Packages: `pandas`, `psycopg2-binary`  
-
-Install Python packages:
+## Project Structure
 
 ```bash
 pip install pandas psycopg2-binary
@@ -36,5 +26,37 @@ sparkify/
 ├── sql_queries.py    # SQL statements for creating/dropping/inserting tables
 ├── 1. create_tables.py  # Script to create/drop database tables
 ├── 2. etl.py            # ETL script to process song/log files
-├── Result CSVs/
+├── Result CSVs/      # Folder for final output CSVs
 └── README.md         # Project documentation
+
+
+### Files Explanation
+
+- **`sql_queries.py`**:  
+  Contains all SQL queries for:
+  - Dropping tables if they exist.
+  - Creating tables (`songs`, `artists`, `users`, `time`, `songplays`).
+  - Inserting records into tables.
+
+- **`create_tables.py`**:  
+  Responsible for:
+  - Creating the `sparkifydb` database.
+  - Dropping old tables if they exist.
+  - Creating new tables with the correct schema.
+
+- **`etl.py`**:  
+  Performs the ETL pipeline:
+  - Reads song JSON files → populates `songs` and `artists`.
+  - Reads log JSON files → populates `users`, `time`, and `songplays`.
+  - Handles missing values, skips empty or invalid records.
+  - Ensures referential integrity between tables.
+
+- **`data/song_data/`**:  
+  Contains raw song JSON files, each file representing a single song and artist.
+
+- **`data/log_data/`**:  
+  Contains raw log JSON files capturing user activity, including song plays.
+
+- **`Result CSVs/`**:  
+  Optional folder for storing intermediate or final CSV outputs if needed.
+
